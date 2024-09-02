@@ -1,20 +1,22 @@
 import { useState } from "react"
+import { AddCategory } from "./components/AddCategory"
+
 
 export const GifApp = () => {
 
-  const [categories, setcategories] = useState(['One Punch', 'Dragon Ball'])
+  const [categories, setCategories] = useState(['One Punch', 'Dragon Ball'])
 
   const onAddCategory = () => {
-    setcategories([...categories, 'Valorant'])
+    setCategories([...categories, 'Valorant'])
   }
 
   return (
     <div>
       <h1> Gif Browser </h1>
-      <button onClick={onAddCategory}> Agregar categoria</button>
+      <AddCategory setCategories={ setCategories } />
       <ol>
         {categories.map(cat => (
-          <li> {cat} </li>
+          <li key={cat}> {cat} </li>
         ))}
       </ol>
     </div>
