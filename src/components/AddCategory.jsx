@@ -5,7 +5,6 @@ export const AddCategory = ({ onNewCategory }) => {
     const [inputValue, setinputValue] = useState('One Punch')
 
     const onInputChange = ({ target }) => {
-        console.log(inputValue)
         setinputValue(target.value)
     }
     const onSubmit = (e) => {
@@ -19,7 +18,7 @@ export const AddCategory = ({ onNewCategory }) => {
     return (
         <>
             <form onSubmit={onSubmit}>
-                <input
+                <input className='px-5 py-2 text-black w-full '
                     type="text"
                     placeholder='Buscar gift'
                     value={inputValue}
