@@ -6,14 +6,16 @@ export const GifApp = () => {
 
   const [categories, setCategories] = useState(['One Punch', 'Dragon Ball'])
 
-  const onAddCategory = () => {
-    setCategories([...categories, 'Valorant'])
+  const onAddCategory = ( newCategory ) => {
+    setCategories(cat => [...categories, newCategory])
   }
 
   return (
     <div>
       <h1> Gif Browser </h1>
-      <AddCategory setCategories={ setCategories } />
+      <AddCategory
+        onNewCategory = {onAddCategory}
+      />
       <ol>
         {categories.map(cat => (
           <li key={cat}> {cat} </li>
